@@ -18,18 +18,12 @@ namespace ASCII_Art_Project
         [STAThread]
         static void Main(string[] args)
         {
-            Logger.Info("Starting the application.");
-
-            OpenFileDialog openFileDilog = new OpenFileDialog
-            {
-                Filter = "Images|*.jpg;*.jpeg;*.png;*.bmp"
-            };
-
             byte counter = 0;
 
             do
             {
-                if (openFileDilog.ShowDialog() != DialogResult.OK)
+                var fileName = ImageFileSelector.SelectImageFile();
+                if (fileName == null)
                 {
                     Logger.Warn("No file selected.");
                     continue;
@@ -37,31 +31,17 @@ namespace ASCII_Art_Project
 
                 counter++;
 
-                Logger.Info($"Selected file: {openFileDilog.FileName}");
+                Logger.Info($"Selected file: {fileName}");
 
                 Console.Clear();
 
-                try
-                {
-                    var fileName = openFileDilog.FileName;
-                    var result = fileName.ProcessImage();
+                var (reversed, normal) = fileName.ProcessSingleImage(counter);
 
-                    result.Reversed.SaveAsTextFile($"image{counter}.txt");
-                    Logger.Info($"Image converted to ASCII and saved to image{counter}.txt");
+                foreach (var row in normal)
+                    Console.WriteLine(row);
 
-                    foreach (var row in result.Normal)
-                        Console.WriteLine(row);
-
-                    Logger.Info($"User added {counter} images");
-
-                    Console.WriteLine("Press enter to add new image. \n");
-                    Console.ReadLine();
-
-                }
-                catch (Exception ex)
-                {
-                    Logger.Error(ex, "An error occurred while processing the image.");
-                }
+                Console.WriteLine("Press enter to add new image. \n");
+                Console.ReadLine();
 
             } while (true);
         }

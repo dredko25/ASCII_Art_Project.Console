@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="BitmapToASCIIConverter.cs" />
     <Compile Include="Extentions.cs" />
+    <Compile Include="ImageFileSelector.cs" />
+    <Compile Include="ImageProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
