@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ASCII_Art_Project.Console\ASCII_Art_Project.Console.csproj">
+      <Project>{c22e3528-864f-420f-b8b6-351633f21917}</Project>
+      <Name>ASCII_Art_Project.Console</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

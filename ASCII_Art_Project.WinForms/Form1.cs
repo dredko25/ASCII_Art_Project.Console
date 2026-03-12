@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,17 @@ namespace ASCII_Art_Project.WinForms
 
         private void buttonConsole_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string consoleAppPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ASCII_Art_Project.Console.exe");
+                ProcessStartInfo processStartInfo = new ProcessStartInfo(consoleAppPath);
 
+                Process.Start(processStartInfo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void buttonForms_Click(object sender, EventArgs e)
