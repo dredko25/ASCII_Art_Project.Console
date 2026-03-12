@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ASCII_Art_Project.Core;
+using NLog;
 
 namespace ASCII_Art_Project.WinForms
 {
     public partial class Form1 : Form
     {
+        public static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +44,23 @@ namespace ASCII_Art_Project.WinForms
 
         private void buttonForms_Click(object sender, EventArgs e)
         {
+            byte counter = 0;
 
+            var fileName = ImageFileSelector.SelectImageFile();
+            if (fileName == null)
+            {
+                Logger.Warn("No file selected.");
+                return;
+            }
+
+            counter++;
+
+            Logger.Info($"Selected file: {fileName}");
+
+            var (reversed, normal) = fileName.ProcessSingleImage(counter);
+
+            var form = new AsciiArtForm(normal);
+            form.Show();
         }
     }
 }
