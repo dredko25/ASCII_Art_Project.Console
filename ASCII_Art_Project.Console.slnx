@@ -2,4 +2,5 @@
   <Project Path="ASCII_Art_Project.Console/ASCII_Art_Project.Console.csproj" />
   <Project Path="ASCII_Art_Project.Core/ASCII_Art_Project.Core.csproj" />
   <Project Path="ASCII_Art_Project.UnitTests/ASCII_Art_Project.UnitTests.csproj" />
+  <Project Path="ASCII_Art_Project.WinForms/ASCII_Art_Project.WinForms.csproj" />
 </Solution>
