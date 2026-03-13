@@ -18,6 +18,11 @@ namespace ASCII_Art_Project.WinForms
             DisplayAsciiArt(asciiArt);
         }
 
+
+        /// <summary>
+        /// Displays the specified ASCII art in the rich text box.
+        /// </summary>
+        /// <param name="asciiArt"> A two-dimensional array of characters representing the ASCII art to display. </param>
         private void DisplayAsciiArt(char[][] asciiArt)
         {
             richTextBox.Text = string.Join(Environment.NewLine,

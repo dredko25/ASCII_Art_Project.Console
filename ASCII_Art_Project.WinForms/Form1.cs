@@ -24,10 +24,6 @@ namespace ASCII_Art_Project.WinForms
             InitializeComponent();
         }
 
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-
-        //}
 
         /// <summary>
         /// Handles the click event for the Console button, launching the ASCII Art Project console application.
