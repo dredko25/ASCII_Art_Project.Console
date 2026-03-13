@@ -17,7 +17,6 @@ namespace ASCII_Art_Project.WinForms
     {
         public static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-        public byte counter = 0;
 
         public Form1()
         {
@@ -53,6 +52,7 @@ namespace ASCII_Art_Project.WinForms
         /// <param name="e"> The event data associated with the button click. </param>
         private void buttonForms_Click(object sender, EventArgs e)
         {
+            Logger.Info("Starting the WinForms application.");
             var fileName = ImageFileSelector.SelectImageFile();
             if (fileName == null)
             {
@@ -60,11 +60,9 @@ namespace ASCII_Art_Project.WinForms
                 return;
             }
 
-            counter++;
-
             Logger.Info($"Selected file: {fileName}");
 
-            var (reversed, normal) = fileName.ProcessSingleImage(counter);
+            var (reversed, normal) = fileName.ProcessSingleImage();
 
             var form = new AsciiArtForm(normal);
             form.Show();

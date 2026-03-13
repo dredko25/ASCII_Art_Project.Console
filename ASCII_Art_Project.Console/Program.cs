@@ -18,7 +18,7 @@ namespace ASCII_Art_Project
         [STAThread]
         static void Main(string[] args)
         {
-            byte counter = 0;
+            Logger.Info("Starting the Console application.");
 
             do
             {
@@ -29,13 +29,11 @@ namespace ASCII_Art_Project
                     continue;
                 }
 
-                counter++;
-
                 Logger.Info($"Selected file: {fileName}");
 
                 Console.Clear();
 
-                var (reversed, normal) = fileName.ProcessSingleImage(counter);
+                var (reversed, normal) = fileName.ProcessSingleImage();
 
                 foreach (var row in normal)
                     Console.WriteLine(row);
