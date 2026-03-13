@@ -17,16 +17,23 @@ namespace ASCII_Art_Project.WinForms
     {
         public static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
+        public byte counter = 0;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
+        /// <summary>
+        /// Handles the click event for the Console button, launching the ASCII Art Project console application.
+        /// </summary>
+        /// <param name="sender"> The source of the event. </param>
+        /// <param name="e"> The event data associated with the button click. </param>
         private void buttonConsole_Click(object sender, EventArgs e)
         {
             try
@@ -42,10 +49,14 @@ namespace ASCII_Art_Project.WinForms
             }
         }
 
+
+        /// <summary>
+        /// Handles the click event for the Forms button, allowing the user to select an image file and display its ASCII art representation in a new form.
+        /// </summary>
+        /// <param name="sender"> The source of the event. </param>
+        /// <param name="e"> The event data associated with the button click. </param>
         private void buttonForms_Click(object sender, EventArgs e)
         {
-            byte counter = 0;
-
             var fileName = ImageFileSelector.SelectImageFile();
             if (fileName == null)
             {

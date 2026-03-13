@@ -12,6 +12,11 @@ namespace ASCII_Art_Project.Core
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
+
+        /// <summary>
+        /// Displays a file dialog that allows the user to select an image file from the local file system.
+        /// </summary>
+        /// <returns> The full path of the selected image file if the user confirms the selection. Otherwise, null. </returns>
         public static string SelectImageFile()
         {
             Logger.Info("Starting the application.");

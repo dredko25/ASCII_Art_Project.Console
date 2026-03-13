@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="ASCII_Art_Project.Console/ASCII_Art_Project.Console.csproj" />
-  <Project Path="ASCII_Art_Project.Core/ASCII_Art_Project.Core.csproj" />
-  <Project Path="ASCII_Art_Project.UnitTests/ASCII_Art_Project.UnitTests.csproj" />
-  <Project Path="ASCII_Art_Project.WinForms/ASCII_Art_Project.WinForms.csproj" />
+  <Project Path="ASCII_Art_Project.Console/ASCII_Art_Project.Console.csproj" Id="c22e3528-864f-420f-b8b6-351633f21917" />
+  <Project Path="ASCII_Art_Project.Core/ASCII_Art_Project.Core.csproj" Id="0186b8f4-9d2b-4b3c-a73d-38e4bdb249bc" />
+  <Project Path="ASCII_Art_Project.UnitTests/ASCII_Art_Project.UnitTests.csproj" Id="41e9eb52-a2a8-4536-8a43-d4535ecd3d20" />
+  <Project Path="ASCII_Art_Project.WinForms/ASCII_Art_Project.WinForms.csproj" Id="9ce14224-01d8-4bd0-b69d-e994ed2b0d2b" />
 </Solution>
