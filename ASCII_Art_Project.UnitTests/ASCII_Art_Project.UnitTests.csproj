@@ -53,6 +53,7 @@
     <Compile Include="BitmapToASCIIConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtentionsTests.cs" />
+    <Compile Include="ImageProcessorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
