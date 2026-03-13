@@ -25,8 +25,11 @@ namespace ASCII_Art_Project.WinForms
         /// <param name="asciiArt"> A two-dimensional array of characters representing the ASCII art to display. </param>
         private void DisplayAsciiArt(char[][] asciiArt)
         {
-            richTextBox.Text = string.Join(Environment.NewLine,
-                asciiArt.Select(row => new string(row)));
+            foreach (char[] row in asciiArt)
+            {
+                string rowString = new string(row);
+                richTextBox.AppendText(rowString + Environment.NewLine);
+            }
         }
     }
 }
