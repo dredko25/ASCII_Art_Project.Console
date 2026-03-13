@@ -68,16 +68,19 @@ namespace ASCII_Art_Project.Core
         /// <returns> Converted 2D array of characters that represents the ASCII art version of the processed image. </returns>
         public static (char[][] Reversed, char[][] Normal) ProcessImage(this string filePath)
         {
-            Bitmap bitmap = new Bitmap(filePath);
-            bitmap = bitmap.ResizeBitmap();
-            Logger.Info($"Resized image to: {bitmap.Size}");
-            bitmap.ToGrayscale();
-            var converter = new BitmapToASCIIConverter(bitmap);
-            var rowReversed = converter.ConvertReversed();
-            var row = converter.Convert();
+            using (Bitmap bitmap = new Bitmap(filePath))
+            {
+                var resizedBitmap = bitmap.ResizeBitmap();
+                Logger.Info($"Resized image to: {resizedBitmap.Size}");
 
-            return (rowReversed, row);
+                resizedBitmap.ToGrayscale();
+
+                var converter = new BitmapToASCIIConverter(resizedBitmap);
+                var rowReversed = converter.ConvertReversed();
+                var row = converter.Convert();
+
+                return (rowReversed, row);
+            }
         }
     }
-
 }
